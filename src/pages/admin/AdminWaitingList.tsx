@@ -241,8 +241,11 @@ const AdminWaitingList = () => {
                   <td className="p-3 hidden lg:table-cell">
                     <Badge variant="secondary" className="text-xs">{s.level}</Badge>
                   </td>
-                  <td className="p-3 text-muted-foreground text-xs hidden xl:table-cell">{s.goal}</td>
-                  <td className="p-3 text-sm hidden xl:table-cell font-medium">{s.quotedPrice}</td>
+                  <td className="p-3 hidden md:table-cell">
+                    <p className="text-xs text-muted-foreground">{s.availability}</p>
+                  </td>
+                  <td className="p-3 text-muted-foreground text-xs hidden lg:table-cell">{s.goal}</td>
+                  <td className="p-3 text-sm hidden lg:table-cell font-medium">{s.quotedPrice}</td>
                   <td className="p-3">
                     <Badge variant={statusColor(s.status)} className="text-xs">{s.status}</Badge>
                   </td>
