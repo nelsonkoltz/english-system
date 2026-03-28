@@ -9,14 +9,14 @@ import { Users, Search, Plus, Filter } from "lucide-react";
 import { useState, useMemo } from "react";
 
 const ALL_STUDENTS = [
-  { id: 1, name: "João Santos", email: "joao@email.com", teacher: "Prof. Maria", stage: "B1", status: "Ativo", modality: "VIP", age: 25, startDate: "2024-03-01" },
-  { id: 2, name: "Ana Costa", email: "ana@email.com", teacher: "Prof. Maria", stage: "A2", status: "Ativo", modality: "Turma", age: 30, startDate: "2024-01-15" },
-  { id: 3, name: "Pedro Lima", email: "pedro@email.com", teacher: "Prof. Carlos", stage: "B2", status: "Ativo", modality: "VIP", age: 22, startDate: "2023-11-20" },
-  { id: 4, name: "Mariana Souza", email: "mariana@email.com", teacher: "Prof. Maria", stage: "A1", status: "Inativo", modality: "Kids", age: 28, startDate: "2024-02-10" },
-  { id: 5, name: "Lucas Ferreira", email: "lucas@email.com", teacher: "Prof. Carlos", stage: "C1", status: "Ativo", modality: "Turma", age: 35, startDate: "2023-09-05" },
-  { id: 6, name: "Camila Rocha", email: "camila@email.com", teacher: "Prof. Maria", stage: "B1", status: "Ativo", modality: "Kids", age: 27, startDate: "2024-04-01" },
-  { id: 7, name: "Rafael Mendes", email: "rafael@email.com", teacher: "Prof. Carlos", stage: "A2", status: "Ativo", modality: "VIP", age: 19, startDate: "2024-05-10" },
-  { id: 8, name: "Julia Almeida", email: "julia@email.com", teacher: "Prof. Maria", stage: "B2", status: "Inativo", modality: "Turma", age: 32, startDate: "2023-08-15" },
+  { id: 1, name: "João Santos", email: "joao@email.com", teacher: "Prof. Maria", stage: "B1", status: "Ativo", modality: "VIP", age: 25, startDate: "2024-03-01", location: "São Paulo - SP (BRT)" },
+  { id: 2, name: "Ana Costa", email: "ana@email.com", teacher: "Prof. Maria", stage: "A2", status: "Ativo", modality: "Turma", age: 30, startDate: "2024-01-15", location: "Lisboa - Portugal (WET)" },
+  { id: 3, name: "Pedro Lima", email: "pedro@email.com", teacher: "Prof. Carlos", stage: "B2", status: "Ativo", modality: "VIP", age: 22, startDate: "2023-11-20", location: "Miami - EUA (EST)" },
+  { id: 4, name: "Mariana Souza", email: "mariana@email.com", teacher: "Prof. Maria", stage: "A1", status: "Inativo", modality: "Kids", age: 28, startDate: "2024-02-10", location: "Rio de Janeiro - RJ (BRT)" },
+  { id: 5, name: "Lucas Ferreira", email: "lucas@email.com", teacher: "Prof. Carlos", stage: "C1", status: "Ativo", modality: "Turma", age: 35, startDate: "2023-09-05", location: "Toronto - Canadá (EST)" },
+  { id: 6, name: "Camila Rocha", email: "camila@email.com", teacher: "Prof. Maria", stage: "B1", status: "Ativo", modality: "Kids", age: 27, startDate: "2024-04-01", location: "Belo Horizonte - MG (BRT)" },
+  { id: 7, name: "Rafael Mendes", email: "rafael@email.com", teacher: "Prof. Carlos", stage: "A2", status: "Ativo", modality: "VIP", age: 19, startDate: "2024-05-10", location: "Dublin - Irlanda (GMT)" },
+  { id: 8, name: "Julia Almeida", email: "julia@email.com", teacher: "Prof. Maria", stage: "B2", status: "Inativo", modality: "Turma", age: 32, startDate: "2023-08-15", location: "Curitiba - PR (BRT)" },
 ];
 
 const AdminStudents = () => {
@@ -124,6 +124,7 @@ const AdminStudents = () => {
           <thead>
             <tr className="border-b bg-muted/50">
               <th className="text-left p-3 font-medium text-muted-foreground">Nome</th>
+              <th className="text-left p-3 font-medium text-muted-foreground hidden md:table-cell">Localização</th>
               <th className="text-left p-3 font-medium text-muted-foreground hidden md:table-cell">Teacher</th>
               <th className="text-left p-3 font-medium text-muted-foreground">Stage</th>
               <th className="text-left p-3 font-medium text-muted-foreground hidden lg:table-cell">Modalidade</th>
@@ -138,6 +139,7 @@ const AdminStudents = () => {
                   <p className="font-medium">{s.name}</p>
                   <p className="text-xs text-muted-foreground">{s.email}</p>
                 </td>
+                <td className="p-3 text-xs text-muted-foreground hidden md:table-cell">{s.location}</td>
                 <td className="p-3 text-muted-foreground hidden md:table-cell">{s.teacher}</td>
                 <td className="p-3">
                   <Badge variant="secondary" className="text-xs">{s.stage}</Badge>
@@ -157,7 +159,7 @@ const AdminStudents = () => {
             ))}
             {filtered.length === 0 && (
               <tr>
-                <td colSpan={6} className="p-8 text-center text-muted-foreground">
+                <td colSpan={7} className="p-8 text-center text-muted-foreground">
                   <Users className="w-8 h-8 mx-auto mb-2 opacity-30" />
                   <p className="text-sm">Nenhum aluno encontrado</p>
                 </td>
