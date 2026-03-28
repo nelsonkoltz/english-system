@@ -70,11 +70,14 @@ const AdminDashboard = () => (
                     </Badge>
                   </td>
                   <td className="p-3 hidden md:table-cell">
-                    {s.pending ? (
-                      <Badge variant="destructive" className="text-xs">Pendente</Badge>
-                    ) : (
-                      <Badge variant="secondary" className="text-xs">Em dia</Badge>
-                    )}
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-medium">{s.packageUsed}/{s.packageTotal}</span>
+                      {s.packageUsed >= s.packageTotal ? (
+                        <Badge variant="destructive" className="text-[10px]">Renovar</Badge>
+                      ) : (
+                        <Badge variant="secondary" className="text-[10px]">{s.packageTotal - s.packageUsed} restantes</Badge>
+                      )}
+                    </div>
                   </td>
                 </tr>
               ))}

@@ -69,7 +69,7 @@ const StudentDashboard = () => (
                 <td className="p-3 font-medium">{c.topic}</td>
                 <td className="p-3 hidden md:table-cell text-muted-foreground">{c.teacher}</td>
                 <td className="p-3">
-                  <Badge variant={c.status === "Presente" ? "default" : "destructive"} className="text-xs">
+                  <Badge variant={c.status === "Presente" ? "default" : c.status === "Cancelada" ? "secondary" : "destructive"} className="text-xs">
                     {c.status}
                   </Badge>
                 </td>
