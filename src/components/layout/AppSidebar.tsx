@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import {
   LayoutDashboard, Users, BookOpen, CreditCard, BarChart3,
   Calendar, ClipboardCheck, LogOut, GraduationCap, FileText,
-  Bell, Settings
+  Bell, Settings, Clock
 } from "lucide-react";
 
 const NAV_ITEMS: Record<UserRole, { label: string; path: string; icon: React.ElementType }[]> = {
