@@ -9,6 +9,9 @@ import NotFound from "./pages/NotFound";
 import StudentDashboard from "./pages/student/StudentDashboard";
 import TeacherDashboard from "./pages/teacher/TeacherDashboard";
 import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminStudents from "./pages/admin/AdminStudents";
+import StudentMaterials from "./pages/student/StudentMaterials";
+import TeacherSchedule from "./pages/teacher/TeacherSchedule";
 
 const queryClient = new QueryClient();
 
