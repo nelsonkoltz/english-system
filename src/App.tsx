@@ -13,6 +13,7 @@ import AdminStudents from "./pages/admin/AdminStudents";
 import AdminWaitingList from "./pages/admin/AdminWaitingList";
 import StudentMaterials from "./pages/student/StudentMaterials";
 import TeacherSchedule from "./pages/teacher/TeacherSchedule";
+import AdminFinance from "./pages/admin/AdminFinance";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/admin/students" element={<AdminStudents />} />
             <Route path="/admin/waiting-list" element={<AdminWaitingList />} />
+            <Route path="/admin/finance" element={<AdminFinance />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
