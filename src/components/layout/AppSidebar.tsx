@@ -10,6 +10,7 @@ const NAV_ITEMS: Record<UserRole, { label: string; path: string; icon: React.Ele
   admin: [
     { label: "Dashboard", path: "/admin", icon: LayoutDashboard },
     { label: "Alunos", path: "/admin/students", icon: Users },
+    { label: "Lista de Espera", path: "/admin/waiting-list", icon: Clock },
     { label: "Teachers", path: "/admin/teachers", icon: GraduationCap },
     { label: "Financeiro", path: "/admin/finance", icon: CreditCard },
     { label: "Relatórios", path: "/admin/reports", icon: BarChart3 },
