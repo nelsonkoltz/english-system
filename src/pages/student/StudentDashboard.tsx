@@ -43,10 +43,10 @@ const StudentDashboard = () => (
 
     {/* Stats */}
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-      <StatCard label="Aulas este mês" value={8} icon={<BookOpen className="w-4 h-4" />} />
+      <StatCard label="Aulas restantes" value="3/8" icon={<BookOpen className="w-4 h-4" />} />
       <StatCard label="Frequência" value="92%" icon={<Clock className="w-4 h-4" />} trend="+3%" trendUp />
       <StatCard label="Stage" value="B1" icon={<Trophy className="w-4 h-4" />} />
-      <StatCard label="Próximo pagamento" value="R$350" icon={<CreditCard className="w-4 h-4" />} />
+      <StatCard label="Pacote" value="R$680" icon={<CreditCard className="w-4 h-4" />} />
     </div>
 
     {/* Recent classes */}
