@@ -210,8 +210,9 @@ const AdminWaitingList = () => {
                 <th className="text-left p-3 font-medium text-muted-foreground hidden lg:table-cell">Contato</th>
                 <th className="text-left p-3 font-medium text-muted-foreground">Modalidade</th>
                 <th className="text-left p-3 font-medium text-muted-foreground hidden lg:table-cell">Nível</th>
-                <th className="text-left p-3 font-medium text-muted-foreground hidden xl:table-cell">Objetivo</th>
-                <th className="text-left p-3 font-medium text-muted-foreground hidden xl:table-cell">Valor</th>
+                <th className="text-left p-3 font-medium text-muted-foreground hidden md:table-cell">Disponibilidade</th>
+                <th className="text-left p-3 font-medium text-muted-foreground hidden lg:table-cell">Objetivo</th>
+                <th className="text-left p-3 font-medium text-muted-foreground hidden lg:table-cell">Valor</th>
                 <th className="text-left p-3 font-medium text-muted-foreground">Status</th>
               </tr>
             </thead>
@@ -240,8 +241,11 @@ const AdminWaitingList = () => {
                   <td className="p-3 hidden lg:table-cell">
                     <Badge variant="secondary" className="text-xs">{s.level}</Badge>
                   </td>
-                  <td className="p-3 text-muted-foreground text-xs hidden xl:table-cell">{s.goal}</td>
-                  <td className="p-3 text-sm hidden xl:table-cell font-medium">{s.quotedPrice}</td>
+                  <td className="p-3 hidden md:table-cell">
+                    <p className="text-xs text-muted-foreground">{s.availability}</p>
+                  </td>
+                  <td className="p-3 text-muted-foreground text-xs hidden lg:table-cell">{s.goal}</td>
+                  <td className="p-3 text-sm hidden lg:table-cell font-medium">{s.quotedPrice}</td>
                   <td className="p-3">
                     <Badge variant={statusColor(s.status)} className="text-xs">{s.status}</Badge>
                   </td>
@@ -249,7 +253,7 @@ const AdminWaitingList = () => {
               ))}
               {filtered.length === 0 && (
                 <tr>
-                  <td colSpan={8} className="p-8 text-center text-muted-foreground">
+                  <td colSpan={9} className="p-8 text-center text-muted-foreground">
                     <UserPlus className="w-8 h-8 mx-auto mb-2 opacity-30" />
                     <p className="text-sm">Nenhum lead encontrado</p>
                   </td>
