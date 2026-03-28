@@ -210,8 +210,9 @@ const AdminWaitingList = () => {
                 <th className="text-left p-3 font-medium text-muted-foreground hidden lg:table-cell">Contato</th>
                 <th className="text-left p-3 font-medium text-muted-foreground">Modalidade</th>
                 <th className="text-left p-3 font-medium text-muted-foreground hidden lg:table-cell">Nível</th>
-                <th className="text-left p-3 font-medium text-muted-foreground hidden xl:table-cell">Objetivo</th>
-                <th className="text-left p-3 font-medium text-muted-foreground hidden xl:table-cell">Valor</th>
+                <th className="text-left p-3 font-medium text-muted-foreground hidden md:table-cell">Disponibilidade</th>
+                <th className="text-left p-3 font-medium text-muted-foreground hidden lg:table-cell">Objetivo</th>
+                <th className="text-left p-3 font-medium text-muted-foreground hidden lg:table-cell">Valor</th>
                 <th className="text-left p-3 font-medium text-muted-foreground">Status</th>
               </tr>
             </thead>
