@@ -5,15 +5,24 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Index from "./pages/Index";
+import LoginPage from "./pages/LoginPage";
 import NotFound from "./pages/NotFound";
 import StudentDashboard from "./pages/student/StudentDashboard";
+import StudentClasses from "./pages/student/StudentClasses";
 import TeacherDashboard from "./pages/teacher/TeacherDashboard";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminStudents from "./pages/admin/AdminStudents";
 import AdminWaitingList from "./pages/admin/AdminWaitingList";
 import StudentMaterials from "./pages/student/StudentMaterials";
+import StudentNotices from "./pages/student/StudentNotices";
+import StudentPayments from "./pages/student/StudentPayments";
+import StudentProfile from "./pages/student/StudentProfile";
 import TeacherSchedule from "./pages/teacher/TeacherSchedule";
+import TeacherStudents from "./pages/teacher/TeacherStudents";
+import TeacherLessonDetail from "./pages/teacher/TeacherLessonDetail";
+import TeacherPostClass from "./pages/teacher/TeacherPostClass";
 import AdminFinance from "./pages/admin/AdminFinance";
+import MaterialsManager from "./pages/shared/MaterialsManager";
 
 const queryClient = new QueryClient();
 
@@ -26,13 +35,23 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/student" element={<StudentDashboard />} />
+            <Route path="/student/classes" element={<StudentClasses />} />
             <Route path="/student/materials" element={<StudentMaterials />} />
+            <Route path="/student/notices" element={<StudentNotices />} />
+            <Route path="/student/payments" element={<StudentPayments />} />
+            <Route path="/student/profile" element={<StudentProfile />} />
             <Route path="/teacher" element={<TeacherDashboard />} />
             <Route path="/teacher/schedule" element={<TeacherSchedule />} />
+            <Route path="/teacher/students" element={<TeacherStudents />} />
+            <Route path="/teacher/lesson/:lessonId" element={<TeacherLessonDetail />} />
+            <Route path="/teacher/post-class" element={<TeacherPostClass />} />
+            <Route path="/teacher/materials" element={<MaterialsManager />} />
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/admin/students" element={<AdminStudents />} />
             <Route path="/admin/waiting-list" element={<AdminWaitingList />} />
+            <Route path="/admin/materials" element={<MaterialsManager />} />
             <Route path="/admin/finance" element={<AdminFinance />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
