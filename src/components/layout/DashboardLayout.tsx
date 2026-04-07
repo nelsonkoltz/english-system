@@ -4,8 +4,11 @@ import AppSidebar from "./AppSidebar";
 const DashboardLayout = ({ children }: { children: ReactNode }) => (
   <div className="flex min-h-screen">
     <AppSidebar />
+
     <main className="flex-1 overflow-auto">
-      <div className="p-6 md:p-8 max-w-6xl">{children}</div>
+      <div className="w-full p-6 md:p-8">
+        {children}
+      </div>
     </main>
   </div>
 );
